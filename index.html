@@ -3,25 +3,27 @@
 <head>
   <title>Mi Experiencia AR</title>
   <meta charset="utf-8">
+  <!-- Incluye la biblioteca A-Frame desde la CDN -->
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+  <!-- Incluye AR.js desde la CDN -->
+  <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
-  <a-scene embedded arjs>
-    <!-- Usa el patrón de marcador personalizado -->
-    <a-marker type='pattern' url='https://drive.google.com/uc?export=download&id=1FfiKKe1L2Bqjw7OJDUwo7rL16Hd3sHw2'>
-      <!-- Añade el modelo del auto al marcador -->
+  <!-- Define la escena de A-Frame -->
+  <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam;'>
+    <!-- Define el marcador de patrón -->
+    <a-marker type='pattern' url='https://raw.githubusercontent.com/Fpanncho/demoAR/main/pattern-marker.patt'>
+      <!-- Añade el modelo GLB al marcador -->
       <a-entity
-        gltf-model="url(https://drive.google.com/uc?export=download&id=11cCnNsFUUpYn-u1nl4jANgAf_O3A-orI)"
-        scale="2 2 2"
+        gltf-model="url(https://raw.githubusercontent.com/Fpanncho/demoAR/main/greenCar.glb)"
+        scale="0.5 0.5 0.5"
         rotation="0 45 0"
         position="0 0 0"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
       </a-entity>
     </a-marker>
-    <a-entity camera></a-entity>
-    <a-entity light="type: ambient; color: #FFF"></a-entity>
-    <a-entity light="type: directional; color: #FFF" position="1 1 1"></a-entity>
+    <!-- Define el fondo de la escena -->
+    <a-sky color="#ECECEC"></a-sky>
   </a-scene>
 </body>
 </html>
