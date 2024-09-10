@@ -11,12 +11,12 @@
 <body>
   <!-- Define la escena de A-Frame -->
   <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam;'>
-    <!-- Define el marcador de patron -->
+    <!-- Define el marcador de patrón -->
     <a-marker type='pattern' url='https://raw.githubusercontent.com/Fpanncho/demoAR/main/pattern-marker.patt'>
       <!-- Añade el modelo GLB al marcador -->
       <a-entity
         gltf-model="url(https://raw.githubusercontent.com/Fpanncho/demoAR/main/greenCar.glb)"
-        scale="2 2 2"
+        scale="0.5 0.5 0.5"
         rotation="0 45 0"
         position="0 0 0"
         animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
@@ -27,3 +27,4 @@
   </a-scene>
 </body>
 </html>
+
